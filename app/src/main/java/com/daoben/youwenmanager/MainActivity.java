@@ -20,8 +20,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements OnTabSelectListener
 {
+    //随便添加的
     private TextView tvTitle;
     private ImageView addContact;
+
     private String[] mTitles = {"主页", "通讯录", "我的"};
     private int[] mIconUnselectIds = {
             R.mipmap.tab_home_unselect,
