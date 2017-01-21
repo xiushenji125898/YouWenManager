@@ -1,0 +1,2 @@
+include ':app', ':FlycoTabLayout_Libs'
+project(':FlycoTabLayout_Libs').projectDir = new File('FlycoTabLayout_Lib')
