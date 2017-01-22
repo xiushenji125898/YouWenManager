@@ -27,6 +27,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
     compile project(':FlycoTabLayout_Libs')
-
+    //轮播图
     compile 'com.bigkoo:convenientbanner:2.0.5'
+    //侧滑删除
+    compile 'com.baoyz.swipemenulistview:library:1.3.0'
 }

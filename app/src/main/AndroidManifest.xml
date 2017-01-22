@@ -17,8 +17,11 @@
         </activity>
         <activity android:name=".ui.home.account.AccountActivity">
         </activity>
-        <activity android:name=".ui.home.account.AddAccountActivity"
-                  android:windowSoftInputMode="stateHidden">
+        <activity
+            android:name=".ui.home.account.AddAccountActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity android:name=".ui.home.notebook.NoteBookActivity">
         </activity>
     </application>
 

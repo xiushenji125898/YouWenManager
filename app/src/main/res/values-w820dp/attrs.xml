@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CnToolBar">
+        <attr name="rightButton" format="reference"/>
+        <attr name="leftButton" format="reference"/>
+        <attr name="isShowSearchView" format="boolean"/>
+
+        <attr name="rightPadding" format="dimension" />
+        <attr name="minHeight" format="dimension"/>
+        
+        
+        <!-- 字体大小 -->
+        <attr name="fontsize_1" format="dimension"></attr>
+        <attr name="fontsize_2" format="dimension"></attr>
+        <attr name="fontsize_3" format="dimension"></attr>
+    </declare-styleable>
+
+
+
+    <declare-styleable name="SlidingMenu">
+
+
+        <attr name="rightPadding" />
+    </declare-styleable>
+    
+    <declare-styleable name="MovieRecorderView">
+        <!-- 开始是否打开摄像头 -->
+        <attr name="is_open_camera" format="boolean" />
+        <!-- 一次拍摄最长时间 -->
+        <attr name="record_max_time" format="integer"/>
+        <!-- 视频分辨率宽度 -->
+        <attr name="width" format="integer"/>
+        <!-- 视频分辨率高度 -->
+        
+        <!-- <attr name="heighta" format="integer"/> -->
+        <attr name="heighta" format="integer"/>
+    </declare-styleable>
+    
+      <declare-styleable name="FancyIndexer">
+        <attr name="widthOffset" format="dimension" />
+        <attr name="minFontSize" format="integer" />
+        <attr name="maxFontSize" format="integer" />
+        <attr name="tipFontSize" format="integer" />
+        <attr name="maxBezierHeight" format="dimension" />
+        <attr name="maxBezierWidth" format="dimension" />
+        <attr name="maxBezierLines" format="integer" />
+        <attr name="additionalTipOffset" format="dimension" />
+        <attr name="fontColor" format="color" />
+        <attr name="tipFontColor" format="color" />
+    </declare-styleable>
+    
+      <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
+
+</resources>

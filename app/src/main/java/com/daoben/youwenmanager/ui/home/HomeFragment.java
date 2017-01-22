@@ -18,6 +18,7 @@ import com.daoben.youwenmanager.R;
 import com.daoben.youwenmanager.adapter.LocalImageHolderView;
 import com.daoben.youwenmanager.adapter.MyGridAdapter;
 import com.daoben.youwenmanager.ui.home.account.AccountActivity;
+import com.daoben.youwenmanager.ui.home.notebook.NoteBookActivity;
 
 import java.util.ArrayList;
 
@@ -119,6 +120,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener, Adapt
                 startActivity(new Intent(getContext(),AccountActivity.class));
                 break;
             case 2:
+                startActivity(new Intent(getContext(),NoteBookActivity.class));
                 break;
             case 3:
                 break;
