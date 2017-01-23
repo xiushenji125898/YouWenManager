@@ -1,8 +1,10 @@
 package com.daoben.youwenmanager.ui.home.notebook;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
@@ -17,7 +19,7 @@ import com.daoben.youwenmanager.ui.BaseActivtiy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NoteBookActivity extends BaseActivtiy
+public class NoteBookActivity extends BaseActivtiy implements View.OnClickListener
 {
     private List<NoteBookBean> mAppList;
     private NoteBookAdapter mAdapter;
@@ -39,18 +41,16 @@ public class NoteBookActivity extends BaseActivtiy
     {
         mAppList = new ArrayList<NoteBookBean>();
         mListView = (SwipeMenuListView) findViewById(R.id.listView);
+        add.setOnClickListener(this);
     }
     private void initData()
     {
-        mAppList.add(new NoteBookBean("2017年1月", "", "", ""));
         mAppList.add(new NoteBookBean("2017年1月", "上午 9：45", "就是测试的", "华苑"));
         mAppList.add(new NoteBookBean("2017年1月", "上午 9：45", "就是测试的2", "华苑"));
         mAppList.add(new NoteBookBean("2017年1月", "上午 9：45", "就是测试的3", "华苑"));
         mAppList.add(new NoteBookBean("2017年1月", "上午 9：45", "就是测试的4", "华苑"));
-        mAppList.add(new NoteBookBean("2017年2月", "", "", ""));
         mAppList.add(new NoteBookBean("2017年2月", "上午 9：45", "就是测试的4", "华苑"));
         mAppList.add(new NoteBookBean("2017年2月", "上午 9：45", "就是测试的4", "华苑"));
-        mAppList.add(new NoteBookBean("2017年3月", "", "", ""));
         mAppList.add(new NoteBookBean("2017年3月", "上午 9：45", "就是测试的4", "华苑"));
         mAppList.add(new NoteBookBean("2017年3月", "上午 9：45", "就是测试的4", "华苑"));
         mAdapter = new NoteBookAdapter(mAppList, this);
@@ -93,6 +93,16 @@ public class NoteBookActivity extends BaseActivtiy
 //                mListView.smoothOpenMenu(i);
             }
         }
+    }
 
+    @Override
+    public void onClick(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.add:
+            startActivity(new Intent(this,AddNoteActivity.class));
+                break;
+        }
     }
 }

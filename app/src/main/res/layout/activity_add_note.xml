@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_note"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.daoben.youwenmanager.ui.home.notebook.AddNoteActivity"
+    android:orientation="vertical"
+    android:background="@mipmap/diarybg">
+    <include layout="@layout/inclod_toolbar"/>
+
+    <TextView
+        android:id="@+id/tv_addnote_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:drawableLeft="@mipmap/diaryclock"
+        android:text="2017年2月15日 15:25"
+        android:gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:textSize="16sp"
+        android:singleLine="true"/>
+    <TextView
+        android:id="@+id/tv_addnote_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:drawableLeft="@mipmap/map"
+        android:drawablePadding="10dp"
+        android:text="和平区"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:singleLine="true"/>
+    <EditText
+        android:id="@+id/et_addnote_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:minLines="5"
+        android:background="@color/lavender"
+        android:hint="用手指记录你的生活。。。"
+        android:gravity="top"
+        android:textSize="16sp"
+        android:padding="10dp"/>
+
+</LinearLayout>
