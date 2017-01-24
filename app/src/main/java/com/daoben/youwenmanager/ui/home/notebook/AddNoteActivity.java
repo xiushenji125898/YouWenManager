@@ -83,21 +83,6 @@ public class AddNoteActivity extends BaseActivtiy
 //                        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //                        Date date = new Date(amapLocation.getTime());
 //                        df.format(date);
-//                        Log.e("获取当前定位结果来源",amapLocation.getLocationType()+"");
-//                        Log.e("获取纬度",amapLocation.getLatitude()+"");
-//                        Log.e("获取精度信息",amapLocation.getLongitude()+"");
-//                        Log.e("地址",amapLocation.getAccuracy()+"");
-//                        Log.e("国家信息",amapLocation.getAddress()+"");
-//                        Log.e("省信息",amapLocation.getCountry()+"");
-//                        Log.e("城市信息",amapLocation.getProvince()+"");
-//                        Log.e("城区信息",amapLocation.getCity()+"");
-//                        Log.e("街道信息",amapLocation.getDistrict()+"");
-//                        Log.e("街道门牌号信息",amapLocation.getStreet()+"");
-//                        Log.e("城市编码",amapLocation.getStreetNum()+"");
-//                        Log.e("地区编码",amapLocation.getCityCode()+"");
-//                        Log.e("获取当前定位点的AOI信息",amapLocation.getAoiName()+"");
-//                        Log.e("获取当前室内定位的建筑物Id",amapLocation.getBuildingId()+"");
-//                        Log.e("获取当前室内定位的楼层",amapLocation.getFloor()+"");
                     tvAddress.setText(city+district+street+aoiName);
 
                     } else

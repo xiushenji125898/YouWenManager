@@ -1,2 +1,3 @@
-include ':app', ':FlycoTabLayout_Libs'
+include ':app', ':FlycoTabLayout_Libs', ':MPChartLibs'
 project(':FlycoTabLayout_Libs').projectDir = new File('FlycoTabLayout_Lib')
+project(':MPChartLibs').projectDir = new File('MPChartLib')
