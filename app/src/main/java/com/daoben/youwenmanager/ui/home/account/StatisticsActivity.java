@@ -142,7 +142,9 @@ public class StatisticsActivity extends BaseActivtiy implements View.OnClickList
         //设置是否显示饼图文字
         pieChart.setDrawSliceText(true);
         Description description = new Description();
-        description.setText("");
+        description.setText("单位：%");
+        description.setTextSize(14);
+        description.setTextColor(Color.parseColor("#ff00ff"));
         pieChart.setDescription(description);
         pieData.setValueTextSize(15);
         pieData.setValueTextColor(Color.parseColor("#ffffff"));

@@ -18,7 +18,7 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements OnTabSelectListener
+public class MainActivity extends AppCompatActivity implements OnTabSelectListener, View.OnClickListener
 {
     //随便添加的
     private TextView tvTitle;
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
         mCommonTabLayout.setTabData(mTabEntities,this,R.id.fl_main,mFragments);
         mCommonTabLayout.setOnTabSelectListener(this);
+        addContact.setOnClickListener(this);
     }
 
     /**
@@ -109,5 +110,11 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     public void onTabReselect(int position)
     {
 
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        
     }
 }
