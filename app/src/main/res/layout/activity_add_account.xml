@@ -34,15 +34,17 @@
                 android:background="@color/border_gray"/>
 
             <EditText
+                android:id="@+id/et_addaccount_money"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="10dp"
                 android:background="@null"
                 android:hint="请输入金额"
-                android:textSize="16sp"
+                android:inputType="numberDecimal"
+                android:paddingBottom="10dp"
                 android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:textSize="16sp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -63,149 +65,149 @@
                 android:background="@color/border_gray"/>
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_select_canyin"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/green"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="餐饮"
+                    android:textSize="16sp"/>
 
-                    <Button
-                        android:id="@+id/btn_select_canyin"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/green"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="餐饮"
-                        android:textSize="16sp"/>
-
-                    <Button
-                        android:id="@+id/btn_select_wanggou"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/darkgray"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="网购"
-                        android:textSize="16sp"/>
-
-                    <Button
-                        android:id="@+id/btn_select_jiaotong"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/darkgray"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="交通"
-                        android:textSize="16sp"/>
-
-                    <Button
-                        android:id="@+id/btn_select_yiwu"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/darkgray"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="衣物"
-                        android:textSize="16sp"/>
-
-                    <Button
-                        android:id="@+id/btn_select_gouwu"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/darkgray"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="购物"
-                        android:textSize="16sp"
-                        />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/btn_select_wanggou"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkgray"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="网购"
+                    android:textSize="16sp"/>
 
-                    <Button
-                        android:id="@+id/btn_select_yule"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/darkgray"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="娱乐"
-                        android:textSize="16sp"/>
+                <Button
+                    android:id="@+id/btn_select_jiaotong"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkgray"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="交通"
+                    android:textSize="16sp"/>
 
-                    <Button
-                        android:id="@+id/btn_select_licai"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/darkgray"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="理财"
-                        android:textSize="16sp"/>
+                <Button
+                    android:id="@+id/btn_select_yiwu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkgray"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="衣物"
+                    android:textSize="16sp"/>
 
-                    <Button
-                        android:id="@+id/btn_select_jiaofei"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/darkgray"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="缴费"
-                        android:textSize="16sp"/>
+                <Button
+                    android:id="@+id/btn_select_gouwu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkgray"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="购物"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btn_select_xuexi"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/darkgray"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="学习"
-                        android:textSize="16sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btn_select_other"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:background="@color/darkgray"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="其他"
-                        android:textSize="16sp"
-                        />
-                </LinearLayout>
+                <Button
+                    android:id="@+id/btn_select_yule"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkgray"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="娱乐"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/btn_select_licai"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkgray"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="理财"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/btn_select_jiaofei"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkgray"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="缴费"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/btn_select_xuexi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkgray"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="学习"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/btn_select_other"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/darkgray"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="其他"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -226,11 +228,12 @@
                 android:background="@color/border_gray"/>
 
             <TextView
+                android:id="@+id/tv_addaccount_mode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:paddingTop="10dp"
                 android:paddingBottom="10dp"
+                android:paddingTop="10dp"
                 android:text="点击选择支付方式"
                 android:textSize="16sp"/>
 
@@ -238,6 +241,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@color/border_gray"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -245,24 +249,28 @@
                 android:layout_marginLeft="10dp"
                 android:text="消费备注"
                 android:textSize="16sp"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@color/border_gray"/>
+
             <EditText
+                android:id="@+id/et_addaccount_remark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="10dp"
                 android:background="@null"
+                android:gravity="top"
                 android:hint="请输入消费备注"
-                android:textSize="16sp"
-                android:paddingTop="5dp"
-                android:paddingBottom="10dp"
                 android:inputType="textMultiLine"
                 android:maxLength="50"
                 android:minLines="3"
-                android:gravity="top"/>
+                android:paddingBottom="10dp"
+                android:paddingTop="5dp"
+                android:textSize="16sp"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
