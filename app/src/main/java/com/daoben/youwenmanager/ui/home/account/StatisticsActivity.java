@@ -3,12 +3,16 @@ package com.daoben.youwenmanager.ui.home.account;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daoben.youwenmanager.Dao.DaoAccountDao;
 import com.daoben.youwenmanager.R;
+import com.daoben.youwenmanager.Util.StatisticsUtil;
 import com.daoben.youwenmanager.Util.Util;
+import com.daoben.youwenmanager.YouWenApplication;
 import com.daoben.youwenmanager.ui.BaseActivtiy;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -19,17 +23,21 @@ import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
 
+/**
+ * 消费统计
+ */
 public class StatisticsActivity extends BaseActivtiy implements View.OnClickListener
 {
     private PieChart mPieChart;
     private ImageView ivUp, ivDown;
     private TextView tvShwoYear;
-    private static final int maxYear = 2017;
-    private static final int maxMonth = 1;
-    private static final int minYear = 2016;
-    private static final int minMonth = 6;
+    private int maxYear;
+    private int maxMonth;
+    private int minYear;
+    private int minMonth;
     private int year;
     private int month;
+    private DaoAccountDao dao;
 
 
     @Override
@@ -39,6 +47,7 @@ public class StatisticsActivity extends BaseActivtiy implements View.OnClickList
         setContentView(R.layout.activity_statistics);
         setupToolbar();
         setTitle("消费统计");
+        dao = YouWenApplication.getApplication().getDaoSession().getDaoAccountDao();
         initView();
         initData();
     }
@@ -53,6 +62,11 @@ public class StatisticsActivity extends BaseActivtiy implements View.OnClickList
 
     private void initData()
     {
+        maxYear = Integer.parseInt(StatisticsUtil.getMaxYear(dao));
+        maxMonth = Integer.parseInt(StatisticsUtil.getMaxMonth(dao));
+        minYear = Integer.parseInt(StatisticsUtil.getMinYear(dao));
+        minMonth = Integer.parseInt(StatisticsUtil.getMinMonth(dao));
+        Log.e("allYear", "       ------------ --- " + maxYear + "   =============              " + maxMonth + "      ==============     " + minYear + "      ================    " + minMonth);
         PieData mPieData = getPieData(4, 100);
         showChart(mPieChart, mPieData);
 //        tvShwoYear.setText(maxYear + "年" + maxMonth + "月");
@@ -224,6 +238,10 @@ public class StatisticsActivity extends BaseActivtiy implements View.OnClickList
                         month = 12;
                         year = year - 1;
                         setTvShowYear(year, month);
+                    }else
+                    {
+                        month = month - 1;
+                        setTvShowYear(year, month);
                     }
                 }
                 break;
@@ -246,7 +264,7 @@ public class StatisticsActivity extends BaseActivtiy implements View.OnClickList
                     if (month + 1 > maxMonth)
                     {
                         Util.showToast(this, "已是最后记账月份");
-                    }else
+                    } else
                     {
                         month = month + 1;
                         setTvShowYear(year, month);

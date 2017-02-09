@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.bigkoo.alertview.AlertView;
 import com.bigkoo.alertview.OnItemClickListener;
 import com.daoben.youwenmanager.Dao.DaoAccountDao;
-import com.daoben.youwenmanager.Dao.DaoMaster;
 import com.daoben.youwenmanager.R;
 import com.daoben.youwenmanager.Util.CashierInputFilter;
 import com.daoben.youwenmanager.Util.Util;
@@ -20,8 +19,10 @@ import com.daoben.youwenmanager.YouWenApplication;
 import com.daoben.youwenmanager.entity.DaoAccount;
 import com.daoben.youwenmanager.ui.BaseActivtiy;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * 记一笔
@@ -144,12 +145,17 @@ public class AddAccountActivity extends BaseActivtiy implements View.OnClickList
                     Util.showToast(this, "请输入备注");
                 } else
                 {
-                    mDaoAccount = new DaoAccount(null,money,tag,modepos,remark,System.currentTimeMillis()+"");
-                    mDaoAccount.setMoney(money);
-                    mDaoAccount.setMode(modepos);
-                    mDaoAccount.setRemark(remark);
-                    mDaoAccount.setType(tag);
-                    mDaoAccount.setDate(Util.getSysTime("yyyy-MM-dd"));
+                    String year = Util.getSysTime("yyyy");
+                    String month = Util.getSysTime("M");
+                    String day = Util.getSysTime("d");
+                    int week = Util.getWeek();
+
+                    mDaoAccount = new DaoAccount(null,money,tag,modepos,remark,year,month,day,week+"");
+//                    mDaoAccount.setMoney(money);
+//                    mDaoAccount.setMode(modepos);
+//                    mDaoAccount.setRemark(remark);
+//                    mDaoAccount.setType(tag);
+//                    mDaoAccount.setDate(new Date());
 
                     dao.insert(mDaoAccount);
                     Util.showToast(this,"保存完成");

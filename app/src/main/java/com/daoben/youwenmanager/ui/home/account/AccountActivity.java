@@ -1,8 +1,6 @@
 package com.daoben.youwenmanager.ui.home.account;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,8 +55,7 @@ public class AccountActivity extends BaseActivtiy implements View.OnClickListene
     {
         btnAddExpend.setOnClickListener(this);
         llStatistics.setOnClickListener(this);
-        tvDay.setText(AccountUtil.getToDayMoney(dao)+"");
-        tvWeek.setText(AccountUtil.getToWeekMoney(dao,this)+"");
+
     }
 
 
@@ -69,6 +66,39 @@ public class AccountActivity extends BaseActivtiy implements View.OnClickListene
         tvDay = (TextView) findViewById(R.id.tv_expend_day);
         tvMonth = (TextView) findViewById(R.id.tv_expend_month);
         tvWeek = (TextView) findViewById(R.id.tv_expend_week);
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+
+        double daymoney = AccountUtil.getToDayMoney(dao,this);
+        if(daymoney ==0)
+        {
+            tvDay.setText("￥0.0");
+        }else
+        {
+            tvDay.setText("￥"+daymoney);
+        }
+        double weekmoney = AccountUtil.getToWeekMoney(dao,this);
+        if(weekmoney ==0)
+        {
+            tvWeek.setText("￥0.0");
+        }else
+        {
+            tvWeek.setText("￥"+weekmoney);
+        }
+        double monthmoney = AccountUtil.getToMonthMoney(dao,this);
+//        tvMonth.setText(AccountUtil.getToMonthMoney(dao,this)+"");
+        if(monthmoney ==0)
+        {
+            tvMonth.setText("￥0.0");
+        }else
+        {
+            tvMonth.setText("￥"+monthmoney);
+        }
+
     }
 
     @Override
