@@ -8,13 +8,15 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/convenientBanner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         app:canLoop="true"
     />
     <GridView
         android:id="@+id/gv_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:horizontalSpacing="0.0dip"
         android:listSelector="@null"
         android:numColumns="4"

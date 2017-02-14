@@ -1,14 +1,16 @@
 package com.daoben.youwenmanager;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.daoben.youwenmanager.bean.TabEntity;
+import com.daoben.youwenmanager.ui.contact.AddContactActivity;
 import com.daoben.youwenmanager.ui.contact.ContactFragment;
 import com.daoben.youwenmanager.ui.home.HomeFragment;
 import com.daoben.youwenmanager.ui.me.MeFragment;
@@ -24,11 +26,11 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     private TextView tvTitle;
     private ImageView addContact;
 
-    private String[] mTitles = {"主页", "通讯录", "我的"};
-    private int[] mIconUnselectIds = {
+    private String[] mTitles = new String[]{"主页", "通讯录", "我的"};
+    private int[] mIconUnselectIds = new int[]{
             R.mipmap.tab_home_unselect,
             R.mipmap.tab_contact_unselect, R.mipmap.tab_me_unselect};
-    private int[] mIconSelectIds = {
+    private int[] mIconSelectIds = new int[]{
             R.mipmap.tab_home_select,
             R.mipmap.tab_contact_select, R.mipmap.tab_me_select};
     private ArrayList<Fragment> mFragments = new ArrayList<>();
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
 
-        mCommonTabLayout.setTabData(mTabEntities,this,R.id.fl_main,mFragments);
+        mCommonTabLayout.setTabData(mTabEntities, this, R.id.fl_main, mFragments);
         mCommonTabLayout.setOnTabSelectListener(this);
         addContact.setOnClickListener(this);
     }
@@ -98,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
             case 1:
                 tvTitle.setText("通讯录");
                 addContact.setVisibility(View.VISIBLE);
+
                 break;
             case 2:
                 tvTitle.setText("我的");
@@ -115,6 +118,11 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     @Override
     public void onClick(View view)
     {
-        
+        switch (view.getId())
+        {
+            case R.id.addcontact:
+                startActivity(new Intent(this, AddContactActivity.class));
+                break;
+        }
     }
 }

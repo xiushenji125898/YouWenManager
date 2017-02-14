@@ -55,33 +55,56 @@ public class NoteBookAdapter extends BaseAdapter
         ViewHolder h;
         if (view == null)
         {
-            view = mInflater.inflate(R.layout.notebook_item, group, false);
+//            view = mInflater.inflate(R.layout.notebook_item, group, false);
+//            h = new ViewHolder();
+//            h.tvTime = (TextView) view.findViewById(R.id.tv_item_notebook_time);
+//            h.tvContent = (TextView) view.findViewById(R.id.tv_item_notebook_content);
+//            h.tvAddress = (TextView) view.findViewById(R.id.tv_item_notebook_address);
+//            h.rivImage = (RoundImageView) view.findViewById(R.id.riv_item_notebook);
+//            h.tvMonth = (TextView) view.findViewById(R.id.tv_item_timeline_date);
+//            h.tvDay = (TextView) view.findViewById(R.id.tv_item_day);
+            view = mInflater.inflate(R.layout.item_timeline, group, false);
             h = new ViewHolder();
-            h.tvTime = (TextView) view.findViewById(R.id.tv_item_notebook_time);
-            h.tvContent = (TextView) view.findViewById(R.id.tv_item_notebook_content);
-            h.tvAddress = (TextView) view.findViewById(R.id.tv_item_notebook_address);
-            h.rivImage = (RoundImageView) view.findViewById(R.id.riv_item_notebook);
-            h.tvMonth = (TextView) view.findViewById(R.id.tv_item_month);
-            h.tvDay = (TextView) view.findViewById(R.id.tv_item_day);
+//            h.tvTime = (TextView) view.findViewById(R.id.tv_item_timeline_time);
+            h.tvContent = (TextView) view.findViewById(R.id.tv_item_timeline_content);
+//            h.tvAddress = (TextView) view.findViewById(R.id.tv_item_timeline_address);
+            h.rivImage1 = (RoundImageView) view.findViewById(R.id.riv_item_timeline1);
+            h.rivImage2 = (RoundImageView) view.findViewById(R.id.riv_item_timeline2);
+            h.rivImage3 = (RoundImageView) view.findViewById(R.id.riv_item_timeline3);
+            h.tvMonth = (TextView) view.findViewById(R.id.tv_item_timeline_date);
+            h.llTimeline = (LinearLayout) view.findViewById(R.id.ll_item_timeline);
+//            h.tvDay = (TextView) view.findViewById(R.id.tv_item_day);
             view.setTag(h);
         } else
         {
             h = (ViewHolder) view.getTag();
         }
         NoteBookBean bean = list.get(i);
-        h.tvTime.setText(bean.getTime());
+//        h.tvTime.setText(bean.getTime());
         h.tvContent.setText(bean.getContent());
-        h.tvAddress.setText(bean.getAddress());
-        h.rivImage.setType(RoundImageView.TYPE_ROUND);
-        h.rivImage.setImageResource(R.drawable.man);
-        h.tvMonth.setText("1月");
-        h.tvDay.setText("20日");
+//        h.tvAddress.setText(bean.getAddress());
+        if (i % 2 != 0)
+        {
+            h.llTimeline.setVisibility(View.VISIBLE);
+            h.rivImage1.setType(RoundImageView.TYPE_ROUND);
+            h.rivImage1.setImageResource(R.drawable.man);
+            h.rivImage2.setType(RoundImageView.TYPE_ROUND);
+            h.rivImage2.setImageResource(R.drawable.man);
+            h.rivImage3.setType(RoundImageView.TYPE_ROUND);
+            h.rivImage3.setImageResource(R.drawable.man);
+        }else
+        {
+            h.llTimeline.setVisibility(View.GONE);
+        }
+        h.tvMonth.setText("1月20日");
+//        h.tvDay.setText("20日");
         return view;
     }
 
     class ViewHolder
     {
-        TextView  tvTime, tvContent, tvAddress,tvMonth,tvDay;
-        RoundImageView rivImage;
+        TextView tvTime, tvContent, tvAddress, tvMonth, tvDay;
+        RoundImageView rivImage1, rivImage2, rivImage3;
+        LinearLayout llTimeline;
     }
 }

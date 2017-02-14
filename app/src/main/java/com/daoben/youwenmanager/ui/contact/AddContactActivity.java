@@ -14,5 +14,7 @@ public class AddContactActivity extends BaseActivtiy
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contact);
+        setupToolbar();
+        setTitle("添加联系人");
     }
 }
